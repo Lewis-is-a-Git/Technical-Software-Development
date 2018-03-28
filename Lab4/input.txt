@@ -1,0 +1,354 @@
+
+SWE20004
+Semester 1, 201
+8
+Dr. Markus Lumpe
+1
+Swinburne University o
+f Technology
+Faculty of Information and Communication Technologies
+LABORATORY COVER SHEET
+Subject Code:
+SWE20004
+Subject Title:
+Technical Software Development
+Lab number and title:
+4, Input 
+-
+Output
+Lecturer:
+Dr. 
+Markus Lumpe
+Always  bear  in  mind  that  your  own  resolution  to  succeed  is  more 
+important than any one thing.
+Abraham Lincoln
+SWE20004
+Semester 1, 201
+8
+Dr. Markus Lumpe
+2
+Questions and Answers
+R
+eview  the  learning  material  (lecture  notes,  tutorials,  and 
+C++  reference)  to  explain  and 
+describe the following concepts. Group work is encouraged.
+1.
+What are the steps to create a C++ project in Visual Studio?
+2.
+How can one add a new source file to a Visual Studio C++ project?
+3.
+What are the steps of program design and
+development?
+4.
+Name the program patterns. Explain the purpose of each.
+5.
+What is a control structure?
+6.
+What does the term “dangling
+-
+else” stand for?
+7.
+When do you apply a for
+-
+loop, a while
+-
+loop, and a do
+-
+while loop?
+8.
+How often is the body of a loop executed?
+9.
+What
+are cout, cin, and cerr?
+10.
+How does standard I/O work in C/C++?
+11.
+What are the main I/O libraries?
+12.
+How can your program interact with its environment?
+13.
+H
+ow can a program work with files?
+14.
+Are all files of the same type?
+15.
+What does the type 
+'
+void
+’
+signal?
+16.
+Are cha
+racters compatible 
+with
+integers?
+17.
+How do we represent text in a C++ application?
+18.
+How do we declare and use arrays in C/C++?
+SWE20004
+Semester 1, 201
+8
+Dr. Markus Lumpe
+3
+Lab 4: Input 
+–
+Output
+Exercise 1 
+–
+Character Counter
+The goal of 
+this laboratory session
+is to develop a small Console application 
+that counts the 
+number  of  occurrences  of  each  character  (byt
+e  value)  in  a  given  input  file.  The  solution 
+requires  approx.  80  lines  of  code.  As  a  simplification,  we  write  just  a  main  function  to 
+implement  the  character  counting  process.  (Decomposing  the  pro
+blem  into  several  smaller 
+functions would normally be better, but we do not know enough about parameter passing in 
+C++ at this stage, which is a prerequisite for function decomposition.)
+The 
+CharCounter
+main function must define five distinct parts:
+•
+Check 
+command line arguments and open an input file
+•
+Declare  two  variables:  an  integer  variable  to  count  the  total  number  of  characters 
+processed  and  an  array  of  integers  with  256  elements  to  count  the  character 
+frequencies. The two variables must be properly ini
+tialized.
+•
+Count the characters in the input file. A simple while
+-
+loop can do the trick. We use 
+binary  I/O.  So,  we  need  to  use  the 
+get
+method  to  read  a  character  from  a  file  in 
+binary  mode.  We  can  use  the  result  as  an  index  to  increment  the  corresponding 
+el
+ement in the character frequency array.
+•
+Produce  a  console  output  by  traversing  the  character  frequency  array.  Skip  entries 
+with value 0. 
+All printable 
+entries (
+is
+graph
+(c)
+returns true if 
+c
+is 
+the value of the 
+current  index
+)
+must 
+be  printed  as
+a  normal  character
+,  whereas 
+entries
+with  no 
+graphical representation 
+must
+be printed as two
+-
+character hexadecimal numbers.
+This 
+step requires a for
+-
+loop. You can convert an 
+int
+value 
+i
+to a 
+char
+value 
+c
+by 
+char 
+c = i;
+(there is another way to achieve this
+in C/C++, but this approach works for 
+now).
+•
+Close the input file and terminate the main function.
+Before  you  can  start,  you  need  to  get  a  brief  overview  of  the 
+cctype
+character  handling 
+functions
+, 
+the
+iostream
+–
+standard output stream
+,
+the
+if
+stream
+–
+i
+nput file stream, and 
+iomanip
+–
+stream manipulators.
+http://www.cplusplus.com/reference
+In order to build the
+program
+, you need to understand the use of 
+•
+the 
+cctype
+function 
+isgraph
+,
+•
+the 
+iomanip
+manipulat
+ors 
+o
+dec
+–
+print a number in decimal format,
+o
+hex
+–
+print a number in hexadecimal format,
+o
+setw
+–
+set the width for formatted output, and
+o
+setfill
+–
+set the fill character for formatted output.
+I/O can always go wrong for any reasons. You must define provisions in your program to test, 
+whether an I/O operation was successful. 
+Before  you  start  coding,  create  a  plan  and  identify  the  pain
+-
+points  (the  problems  that  you 
+need to solve)
+to guide you th
+rough this exercise
+.
+SWE20004
+Semester 1, 201
+8
+Dr. Markus Lumpe
+4
+In the end, you program sh
+ould produce an output similar to the following sample:
+Character counts for 1011 characters:
+09:
+50
+0a:
+54
+20:
+107
+":
+8
+#:
+3
+&:
+3
+':
+2
+(:
+12
+):
+12
+*:
+6
++:
+8
+,:
+2
+.:
+5
+/:
+8
+0:
+8
+1:
+1
+2:
+4
+4:
+1
+5:
+2
+6:
+2
+9:
+1
+::
+8
+;:
+14
+<:
+32
+=:
+4
+>:
+2
+A:
+1
+C:
+38
+M:
+2
+N:
+3
+O:
+9
+S:
+6
+T:
+3
+[:
+4
+\
+:
+1
+]:
+4
+a:
+78
+b:
+3
+c:
+35
+d:
+9
+e:
+62
+f:
+19
+g:
+3
+h:
+30
+i:
+27
+k:
+1
+l:
+11
+m:
+13
+n:
+32
+o:
+35
+p:
+8
+r:
+82
+s:
+21
+t:
+64
+u:
+27
+
