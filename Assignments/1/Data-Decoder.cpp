@@ -2,7 +2,7 @@
     Author: Lewis Brockman-Horsley
     Date Created: March 2018
     Purpose: Decode a list of integers form an input file to ASCII art in an output file
-    Special Notes: Requires 2 command line arguments input.txt and output.txt
+    Special Notes: Requires 2 commmand line arguments input.txt and output.txt
 */
 
 #include <iostream>
