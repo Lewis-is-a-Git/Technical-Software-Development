@@ -1,3 +1,8 @@
+/*
+    Author: Lewis Brockman-Horsley
+    Date Created: March 2018
+    Purpose: Uses Ceasars code to translate codes.
+*/
 #include <iostream>
 #include <string>
 #include <cctype>
