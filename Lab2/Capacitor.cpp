@@ -1,4 +1,8 @@
-//Charging and discharging a capacitor
+/*
+    Author: Lewis Brockman-Horsley
+    Date Created: March 2018
+    Purpose: Simulate the Charging and discharging a capacitor
+*/
 #include <iostream>
 #include <cmath>
 
