@@ -1,15 +1,23 @@
+/**
+ * ProbSolve.cpp
+ * @author Lewis Brockman-Horsley
+ * 
+ * Program to check if a sudoku puzzle is correct
+ * Checks for any duplicates on a row, column and square
+ * Created: 6/4/18
+ * */
 #include <iostream>
 using namespace std;
 bool checkRow(int aBoard[9][9], int aRowIndex)
 {
-    int checkArray[9] = {0};
+    int checkArray[9] = {0};        //check by making a running tally of the numbers on each row
     for (int i = 0; i < 9; i++)
     {
         checkArray[aBoard[aRowIndex][i]]++;
     }
     for (int j = 1; j < 9; j++)
     {
-        if (checkArray[j] > 1)
+        if (checkArray[j] > 1)      //check if the amount of each number is more than 1
         {
             return false;
         }
@@ -19,14 +27,14 @@ bool checkRow(int aBoard[9][9], int aRowIndex)
 }
 bool checkColumn(int aBoard[9][9], int aColumnIndex)
 {
-    int checkArray[9] = {0};
+    int checkArray[9] = {0};        //makes a running tally of the numbers in a column
     for (int i = 0; i < 9; i++)
     {
         checkArray[aBoard[i][aColumnIndex]]++;
     }
     for (int j = 1; j < 9; j++)
     {
-            if (checkArray[j] > 1)
+            if (checkArray[j] > 1)  //checks to make sure there are no duplicates
             {
                 return false;
             }
@@ -37,7 +45,7 @@ bool checkColumn(int aBoard[9][9], int aColumnIndex)
 bool checkSquare(int aBoard[9][9], int aTopLeftRowIndex, int aTopLeftColumnIndex)
 {
 
-    int checkArray[9] = {0};
+    int checkArray[9] = {0};        //makes a running tally of the numbers in one of the 9 3x3 squares
     for (int i = aTopLeftRowIndex; i < 3; i++)
     {
         for (int k = aTopLeftColumnIndex; k < 3; k++)
@@ -48,7 +56,7 @@ bool checkSquare(int aBoard[9][9], int aTopLeftRowIndex, int aTopLeftColumnIndex
     }
     for (int j = 1; j < 9; j++)
     {
-            if (checkArray[j] > 1)
+            if (checkArray[j] > 1)  //checks the amount of each number in the sqaure
             {
                 return false;
             }
@@ -57,7 +65,7 @@ bool checkSquare(int aBoard[9][9], int aTopLeftRowIndex, int aTopLeftColumnIndex
 }
 bool checkBoard(int aBoard[9][9])
 {
-    for (int i = 0; i < 9; i++)
+    for (int i = 0; i < 9; i++)     //checks all 9 rows
     {
         if (!checkRow(aBoard, i))
         {
@@ -68,15 +76,15 @@ bool checkBoard(int aBoard[9][9])
     }
     for (int j = 0; j < 9; j++)
     {
-        if (!checkRow(aBoard, j))
+        if (!checkRow(aBoard, j))   //checks all the columns
         {
             cout << "Failed Column " << j << endl;
             return false;
         }
     }
-    for (int l = 0; l < 3; l++)
+    for (int l = 0; l < 3; l++)     //checks 3 squares on a row
     {
-        for (int m = 0; m < 3; m++)
+        for (int m = 0; m < 3; m++) //checks 3 squares on each column
         {
             if (!checkSquare(aBoard, (l*3), (m*3)))
             {
