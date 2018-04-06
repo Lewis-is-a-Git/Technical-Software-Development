@@ -1,7 +1,13 @@
+/*
+    Author: Lewis Brockman-Horsley
+    Date Created: March 2018
+    Purpose: Decode a list of integers form an input file to ASCII art in an output file
+    Special Notes: Requires 2 commmand line arguments input.txt and output.txt
+*/
+
 #include <iostream>
 #include <fstream>
 #include <iomanip>
-
 using namespace std;
 
 int main(int argc, char* argv[]){
@@ -22,10 +28,10 @@ int main(int argc, char* argv[]){
         while (ifile >> Num){               //while not at the end of the file
             for (int i = 0; i < 4; i++){    
                 c = Num % 256;              //modulo to decode the integer
-                if (c == 0x0A){
-                    ofile << '\n';          //if the character is new line character, move to new line
+                if (c == 0x0A){				//if its a new line character '\n'
+                    ofile << '\n';          //move to new line
                 }else{
-                    ofile << c;             //print the decoded character to the file
+                    ofile << c;             //print the decoded character
                 }
                 Num = Num / 256;            //move to the next character
             } 

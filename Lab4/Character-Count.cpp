@@ -1,3 +1,10 @@
+/*
+    Author: Lewis Brockman-Horsley
+    Date Created: March 2018
+    Purpose: Counts the amount of characters in a text file
+    Special Notes: The input file must be called input.txt
+*/
+
 #include <iostream>
 #include <fstream>
 #include <iomanip>
