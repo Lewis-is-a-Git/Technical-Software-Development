@@ -6,125 +6,58 @@ using namespace std;
 
 char decode(char aData)
 {
-<<<<<<< HEAD
-    int result = 1 + rand() % 127;
-    result = aData - result;
-    if (result < 0)
-    {
-        result = result + 128;
-    }
-    return result;
-=======
-	int result = 1 + rand() % 127;
-	result = aData - result;
-	if (result < 0)
+	int lResult = 1 + rand() % 127; //creates the variable offset using rand
+	lResult = aData - lResult;		//apply the offset
+	if (lResult < 0)
 	{
-		result = result + 128;
+		lResult = lResult + 128;
 	}
-	return result;
->>>>>>> 23cd822bf53ae8219ae51ab4a163e7127500101a
+	return lResult;
 }
 
 void decodeFile(ifstream& aInfile, ofstream& aOutfile, int aKey)
 {
-<<<<<<< HEAD
-    srand(aKey);
-    while (aInfile.good())
-    {
-        if (!aInfile.eof())
-        {
-            aOutfile << decode(aInfile.get());
-        }
-    }
-=======
-	srand(aKey);
+	srand(aKey);			//seed the random function with the decipher key
 	while (aInfile.good())
 	{
 		if (!aInfile.eof())
 		{
-			char lDecode = decode(aInfile.get());
-			if (lDecode == 0x0A)
-			{
-				aOutfile << '\n';
-			}
-			else
-			{
-				aOutfile << lDecode;
-			}
-
+			aOutfile << decode(aInfile.get());; //get a character and decode it
 		}
 	}
->>>>>>> 23cd822bf53ae8219ae51ab4a163e7127500101a
 }
 
 int main(int argc, char* argv[])
 {
-<<<<<<< HEAD
-    if (argc < 3)
-    {
-        cerr << "Not enough command arguments, correct use is:" << endl;
-        cerr << "Cipher key inputfile.txt outputfile.txt" << endl;
-        //return 3;
-    }
-    
-    //arg1 = seed. arg2 = input file, arg3 output.txt
-    char input[] = "EncodedDataOSX(1).txt";
-    //char input[] = "EncodedDataVS(1).txt";
-    char output[] = "output.txt";
-    //int key = atoi(argv[1]);
-    int key = 12345;
-
-    ifstream lInput;
-    ofstream lOutput;
-    lInput.open(input, ios::in);
-    lOutput.open(output, ios::out);
-    //lInput.open(argv[2], ios::in);
-    //lOutput.open(argv[3], ios::out);
-    if (!lInput.good())
-    {
-        cerr << "Cannot open file: " << input << endl;
-        return 2;
-    }
-    if (!lOutput.good())
-    {
-        cerr << "Cannot create file: " << output << endl;
-        return 3;
-    }
-
-    decodeFile(lInput, lOutput, key);
-
-    lOutput << "\n\nPrepared by Lewis Brockman-Horsey (101533222)" << endl;
-
-    lOutput.close();
-    lInput.close();
-    return 0;
-}
-=======
+	//arg1 = seed, arg2 = input file, arg3 output.txt
 	if (argc < 3)
 	{
 		cerr << "Not enough command arguments, correct use is:" << endl;
 		cerr << "Cipher key inputfile.txt outputfile.txt" << endl;
-		return 3;
+		return 1;
 	}
-    
-	int key = atoi(argv[1]);
 
-	ifstream lInput;
+	
+	int lKey = atoi(argv[1]);
+	
+	ifstream lInput;		//create the file streams
 	ofstream lOutput;
 	lInput.open(argv[2], ios::binary);
 	lOutput.open(argv[3], ios::out);
 	if (!lInput.good())
 	{
-		cerr << "Cannot open file: " << argv[1] << endl;
+		cerr << "Cannot open file: " << argv[2] << endl;
+		lOutput.close();
 		return 2;
 	}
 	if (!lOutput.good())
 	{
-		cerr << "Cannot create file: " << argv[2] << endl;
+		cerr << "Cannot create file: " << argv[3] << endl;
+		lInput.close();
 		return 3;
 	}
 
-	decodeFile(lInput, lOutput, key);
+	decodeFile(lInput, lOutput, lKey);
 
 	lOutput << "\n\nPrepared by Lewis Brockman-Horsey (101533222)" << endl;
 
@@ -132,4 +65,3 @@ int main(int argc, char* argv[])
 	lInput.close();
 	return 0;
 }
->>>>>>> 23cd822bf53ae8219ae51ab4a163e7127500101a
