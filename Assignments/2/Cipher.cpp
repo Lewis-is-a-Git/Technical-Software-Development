@@ -22,7 +22,7 @@ void decodeFile(ifstream& aInfile, ofstream& aOutfile, int aKey)
 	{
 		if (!aInfile.eof())
 		{
-			aOutfile << decode(aInfile.get());; //get a character and decode it
+			aOutfile << decode(aInfile.get()); //get a character and decode it
 		}
 	}
 }
@@ -30,7 +30,7 @@ void decodeFile(ifstream& aInfile, ofstream& aOutfile, int aKey)
 int main(int argc, char* argv[])
 {
 	//arg1 = seed, arg2 = input file, arg3 output.txt
-	if (argc < 3)
+	if (argc != 3)
 	{
 		cerr << "Not enough command arguments, correct use is:" << endl;
 		cerr << "Cipher key inputfile.txt outputfile.txt" << endl;
