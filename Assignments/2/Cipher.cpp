@@ -29,15 +29,15 @@ void decodeFile(ifstream& aInfile, ofstream& aOutfile, int aKey)
 
 int main(int argc, char* argv[])
 {
+	//requires 3 command line arguments
 	//arg1 = seed, arg2 = input file, arg3 output.txt
 	if (argc != 3)
 	{
-		cerr << "Not enough command arguments, correct use is:" << endl;
+		cerr << "Incorrect use of command line arguments:" << endl;
 		cerr << "Cipher key inputfile.txt outputfile.txt" << endl;
 		return 1;
 	}
 
-	
 	int lKey = atoi(argv[1]);
 	
 	ifstream lInput;		//create the file streams
