@@ -63,6 +63,7 @@ void determineFirstPreference()
     int preferences[5] = {0, 0, 0, 0, 0};
     int Vote;
     cout << "Counting first preference..." << endl;
+    //count the first preference votes
     while(!lVotes.eof())
     {
         for (int i = 0; i < 5; i++)
@@ -70,7 +71,7 @@ void determineFirstPreference()
             lVotes >> Vote;
             if (Vote == 1)
             {
-                preferences[i]++; //count first preferences
+                preferences[i]++; //only count first preferences
             }
         }
     }
@@ -84,12 +85,12 @@ void determineFirstPreference()
     {
         cout << candidates[i] << ": " << setprecision(4) << percent[i] * 100 << "%" << endl;
     }
-    if (*max_element(percent, percent+5) > double(1)/3)
-    {
+    if (*max_element(percent, percent+5) > double(1)/3) //if there is a majority winner that has more than 1/3 of the votes
+    {   //the index is the distance to the maximum element in the array
         cout << "The winner is " << candidates[distance( percent, max_element(percent, percent + 5))] << endl;
     }
-    else
-    {
+    else //remove the least popular candidate based on first preferences
+    {   //the index is the distance to the minimum element in the array
         cout << "Eliminate Candidate: : " << candidates[distance( percent, min_element(percent, percent + 5))] << endl;
     }
     lVotes.close();
