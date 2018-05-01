@@ -1,8 +1,10 @@
 #include <iostream> // include standard IO library
 #include "BullsAndCows.h" // include Bulls and Cows class
-
 using namespace std;
-
+/**
+* Bulls and Cows is a code-breaking round-based game where the player must guess the correct numbers in the correct sequence.
+* The player must enter four different integers from 1 to 9. and guess the randomly generated code to win the game.
+*/
 int main()
 {
     BullsAndCows lGame;
