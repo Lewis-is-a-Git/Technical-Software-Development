@@ -4,6 +4,7 @@ using namespace std;
 /**
 * Bulls and Cows is a code-breaking round-based game where the player must guess the correct numbers in the correct sequence.
 * The player must enter four different integers from 1 to 9. and guess the randomly generated code to win the game.
+* The format required is: 1234, no spaces, characters or brackets allowed.
 */
 int main()
 {
