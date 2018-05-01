@@ -1,13 +1,13 @@
-#include "BullsAndCows.h"
-#include <cstdlib>
-#include <algorithm>
+#include "BullsAndCows.h" //include Bulls and Cows class
+#include <cstdlib> //include the rand function
+#include <algorithm> //include swap function
 using namespace std;
 
 BullsAndCows::BullsAndCows()
 {
     for (int i = 0; i < 9; i++)
     {
-        fSecretNumbers[i] = i + 1; // constructor initalises an array from 1 to 9
+        fSecretNumbers[i] = i + 1; // constructor initialises an array from 1 to 9
     }   
 }
 void BullsAndCows::start() //scrambles the array
