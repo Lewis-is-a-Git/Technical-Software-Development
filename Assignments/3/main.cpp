@@ -1,5 +1,5 @@
-#include <iostream>
-#include "BullsAndCows.h"
+#include <iostream> // include standard IO library
+#include "BullsAndCows.h" // include Bulls and Cows class
 
 using namespace std;
 
@@ -7,9 +7,9 @@ int main()
 {
     BullsAndCows lGame;
     bool lPlayAgain = true;
+    cout << "Bulls and Cows, brought to you by Lewis Brockman-Horsley (101533222)" << endl;
     while (lPlayAgain)
     {
-        cout << "Bulls and Cows, brought to you by Lewis Brockman-Horsley (101533222)" << endl;
         cout << "New game" << endl;
         lGame.start();
         string lInput;
