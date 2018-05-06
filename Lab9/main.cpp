@@ -25,9 +25,9 @@ int main()
          << "V" << endl;
     //Create a time series printout to roughly deteremine the frequency that the capacitor has an impedance of 10ohms
     cout << "Time Series Capacitor" << endl; 
-    int i = 0;
+    int i = 50;
     Capacitor lC2(0.00022);
-    while ( Resistor(lC2.getValueAtFrequency(i)).getValue() > 10)
+    while ( Resistor(lC2.getValueAtFrequency(i)).getValueAtFrequency(i) > 10); 
     {
         cout << "XC at " << i << "Hz: " << Resistor(lC2.getValueAtFrequency(i)) << endl;
         i += 50;

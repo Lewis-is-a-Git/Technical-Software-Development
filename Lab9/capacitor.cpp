@@ -8,7 +8,25 @@ double Capacitor::getValueAtFrequency(double aFrequency) const
 }
 std::ostream &operator<<(std::ostream &aOStream, const Capacitor &aObject)
 {
-    //TODO: make the output look pretty with fancy units mF uF nF pF
-    aOStream << aObject.getValue() << "F"; 
+    if (aObject.getValue() < 0.000000001)
+    {
+        aOStream << aObject.getValue() * 1000000000000 << "pF"; 
+    }
+    else if (aObject.getValue() < 0.000001)
+    {
+        aOStream << aObject.getValue() * 1000000000 << "nF"; 
+    }
+    else if (aObject.getValue() < 0.001)
+    {
+        aOStream << aObject.getValue() * 1000000 << "uF"; 
+    }
+    else if (aObject.getValue() < 1)
+    {
+        aOStream << aObject.getValue() * 1000 << "mF"; 
+    }
+    else
+    {
+        aOStream << aObject.getValue() << "F"; 
+    }
     return aOStream;
 }

@@ -32,7 +32,17 @@ double Resistor::getCurrentAtFrequency(double aVoltage, double aFrequency) const
 }
 std::ostream &operator<<(std::ostream &aOStream, const Resistor &aObject)
 {
-    //TODO: give the output fancy units kOhms MOhms
-    aOStream << aObject.getValue() << "Ohms"; 
+    if (aObject.getValue() >= 1000000)
+    {
+        aOStream << aObject.getValue() / 1000000 << "MOhms"; 
+    }
+    else if (aObject.getValue() >= 1000)
+    {
+        aOStream << aObject.getValue() / 1000 << "KOhms"; 
+    }
+    else
+    {
+        aOStream << aObject.getValue() << "Ohms"; 
+    }
     return aOStream;
 }
