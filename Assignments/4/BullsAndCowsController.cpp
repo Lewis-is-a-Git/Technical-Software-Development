@@ -48,9 +48,9 @@ using namespace std;
      {
          fGameView.welcome();
          fGameModel.start();
+         fGameView.startNewGame();
          do
          {
-            fGameView.startNewGame();
             fGameModel.guess(fGameView.guess());
             fGameView.showGuess(fGameModel.getBulls(), fGameModel.getCows());
          }
