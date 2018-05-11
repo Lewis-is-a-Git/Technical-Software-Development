@@ -11,7 +11,7 @@ string BullsAndCowsConsoleView::guess()
 }
 void BullsAndCowsConsoleView::showGuess( int aBulls, int aCows )
 {
-    cout << "Number of Bulls: " << aBulls << ", number of Cows :" << aCows << endl;
+    cout << "Number of Bulls: " << aBulls << ", number of Cows: " << aCows << endl;
 }
 void BullsAndCowsConsoleView::welcome()
 {
