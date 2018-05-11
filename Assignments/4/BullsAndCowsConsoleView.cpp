@@ -1,7 +1,7 @@
 #include "BullsAndCowsConsoleView.h"
 #include <iostream>
 using namespace std;
-string guess()
+string BullsAndCowsConsoleView::guess()
 {
     string playerGuess;
     cout << "Make a guess: ";
