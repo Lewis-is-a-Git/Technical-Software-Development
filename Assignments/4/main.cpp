@@ -4,9 +4,10 @@
 using namespace std;
 int main()
 {
-    BullsAndCowsConsoleView lView;
-    BullsAndCows lModel;
-    BullsAndCowsController lController(lModel, lView);
-    lController.run();
-    return 0;
+	BullsAndCowsConsoleView lView; //creates view object
+	BullsAndCows lModel; //creates model object
+	//creates controller object to interface view and model
+	BullsAndCowsController lController(lModel, lView); 
+	lController.run();
+	return 0;
 }
