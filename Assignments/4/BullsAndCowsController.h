@@ -1,3 +1,7 @@
+/*
+* Specification of BullsAndCowsController class
+* @author convenor
+*/
 #pragma once
 #include "BullsAndCows.h"
 #include "lBullsAndCowsView.h"

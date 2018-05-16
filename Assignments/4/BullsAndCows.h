@@ -1,3 +1,8 @@
+/**
+* Specification of class BullsAndCows.
+* @author converner
+* @version v5 (SWE20004, 2018)
+*/
 #pragma once
 #include <string>
 
@@ -11,9 +16,9 @@ private:
 public:
 	/**
 	* Constructor: Instantiates an object of class BullsAndCows.
-	* 				The constructor sets up an array of 9 unique
-	* 				integers between 1 and 9. In addition, the
-	* 				instance variables fBulls and fCows are set to 0.
+	* 			   The constructor sets up an array of 9 unique
+	* 			   integers between 1 and 9. In addition, the
+	* 			   instance variables fBulls and fCows are set to 0.
 	*/
 	BullsAndCows();
 

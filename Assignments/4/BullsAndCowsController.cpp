@@ -1,3 +1,7 @@
+/**
+* Implementation of BullsAndCowsController
+* @author Lewis Brockman-Horsley
+*/
 #include "BullsAndCowsController.h"
 #include <string>
 #include <iostream>
@@ -13,25 +17,21 @@ void BullsAndCowsController::startNewGame()
 * This method implements the guessing phase. It has to request a guess
 * from the user interface and test it with the model. The result should
 * be displayed in the user interface.
-*
 * @return true if the number of correctly guessed bulls is 4.
 */
 bool BullsAndCowsController::guess()
 {
 	return fGameModel.getBulls() == 4;
 }
-
-//public:
 /**
 * Constructor: Instantiates an object of class BullsAndCowsController.
 * The constructor establishes the references to model
 * and view objects. This is done by using a member
 * initializer for each.
 */
-BullsAndCowsController::BullsAndCowsController(BullsAndCows& aGameModel, lBullsAndCowsView& aGameView) :
-	fGameModel(aGameModel), fGameView(aGameView)
-{
-}
+BullsAndCowsController::BullsAndCowsController(BullsAndCows& aGameModel, 
+	lBullsAndCowsView& aGameView) : 
+		fGameModel(aGameModel), fGameView(aGameView) {}
 /**
 * This method implements the "game loop". 
 * Selecting “n” as response to the question “New game, Y/N?”
@@ -45,8 +45,10 @@ void BullsAndCowsController::run()
 		startNewGame(); //creates the array and prints the welcome messages
 		do
 		{
-			fGameModel.guess(fGameView.guess()); //calcualte the number of cows and bulls based on the players guess
-			fGameView.showGuess(fGameModel.getBulls(), fGameModel.getCows()); //prints the number of bulls and cows to the console
+			//calcualte the number of cows and bulls based on the players guess
+			fGameModel.guess(fGameView.guess()); 
+			//print the number of bulls and cows to the console
+			fGameView.showGuess(fGameModel.getBulls(), fGameModel.getCows()); 
 		} while (!guess()); //if the player has not won yet, continue the game
 	} while (fGameView.continueGame()); //ask the player to start a new game
 	fGameView.endGame(); //game over message

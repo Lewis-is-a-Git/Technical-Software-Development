@@ -1,0 +1,7 @@
+
+*.db
+*.opendb
+*.ipch
+.vs/Technical-Software-Development/v15/.suo
+*.sqlite
+*.json
