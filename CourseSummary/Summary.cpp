@@ -1,3 +1,4 @@
+int main(int argc, char* argv[]) {
 //include guard
 	//guard against repeated inclusion
 	#ifndef HEADER_H_
@@ -259,7 +260,7 @@
 
 //Big Oh: Running time estimation
 	/*ranking
-	• Fastest : O(1)
+	ï¿½ Fastest : O(1)
 				O(log n)
 				O(n)
 				O(n log n)
@@ -267,7 +268,7 @@
 				O(n_2 log n)
 				O(n_3)
 				O(2_n)
-	• Slowest : O(n!) 
+	ï¿½ Slowest : O(n!) 
 	*/
 	//Ignore lower order terms
 	//performance analysis
@@ -303,6 +304,7 @@
 		//monte carlo algorithms
 
 //sorting by Fisher&yates
+	//variables passed by reference so any type works
 	#include <stdlib.h>  //srand, rand
 	#include <algorithm> //swap
 	int n = 52;
@@ -316,7 +318,12 @@
 
 
 //containers
+	//containers are abstract data types
+	//collection types all have .size()
+	//all have ::iterators
 	//normal arrays: computation time O(n)
+		//n is the number of elements in the array
+		//may run out of space (buffer overflow)
 	//vector
 	//list
 	//stack
@@ -338,12 +345,14 @@
 	};
 
 //typedef
+	//makes code more readable
 	typedef Adder<int> IntAdder;
 	IntAdder aIntAdder(2, 4);
 
 //Vector arrays
 	//dynamic array, normal arrays have a fixed length
 	//proper initaliazation of elements
+	//can only use push_back to append
 	//can be copied and assignet to other vector variables
 	#include <vector>
 	vector<int> lVectorA(); //create empty array
@@ -352,26 +361,35 @@
 		lVectorA.push_back(lNumber); //add new element
 	}
 	
-
 //List Container
 	//no random access, must traverse to element
 	//list can grow in both directons
+	//iterator allows traverse forwards or backwards
 	list<int> lListA(10); // list fo 10 integers all = 0
-
+	//this is a for each : loop
 	for (list<int>::iterator pos = lListA.begin(); pos != lListA.end(); pos++)
 	{
-		cout << *pos << endl;
+		cout << *pos << endl; // * means dereference operator (value)
 	}
+	//singly-linked list
+	//pairs of data, a value and a reference to the next element
+	//Doubly-linked list
+	//three items per element, data, reference to the previos and next element
+	//insert new elements by rewiring things not moving things
+	//begin() and rbegin() to move in different directions
 
 //Stack Behavior
-	//LIFO
+	//LIFO push(), pop() and top()
 	//stack underflow: try to pop an empty stack
 	//stack overflow: try to push a full stack
+	//used for balancing, must be mepty at the end to be balanced
 
 //Queue Behavior
-	//FIFO
+	//FIFO insert at one end an remove at the other
 	//queue underflow: try to dequeue an empty queue
 	//queue overflow: try to nequeue on a full queue
+	//used to shedule tasks
+	//never fill up a queue because the bigger it get the slower it gets
 
 //Requiremtns Analysis
 	//what type of input is required
@@ -439,3 +457,6 @@ int point::getDimentions() const
 //Final Exam
 	//concepts
 	//tutorials and assignments should take about 20 mins
+
+return 0;
+}
