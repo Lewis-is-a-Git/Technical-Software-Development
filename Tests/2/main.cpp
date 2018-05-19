@@ -1,5 +1,6 @@
 /**
  * @author Lewis Brockman-Horlsey 101533222
+ * This program takes a list of integers and counts the number of the first digits
  */
 #include "BenfordTester.h"
 #include <fstream>
