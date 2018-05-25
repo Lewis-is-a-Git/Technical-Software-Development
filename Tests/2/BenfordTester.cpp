@@ -38,7 +38,7 @@ long BenfordTester::getLeadingDigitCount(unsigned int aLeadingDigit) const
 {
     return fLeadingDigitCount[aLeadingDigit];
 }
-
+//Operator overide doesnt work
 std::ostream &operator<<(std::ostream &aOStream, const BenfordTester &aObject)
 {
     for (int i = 0; i < 9; i++)
