@@ -9,6 +9,9 @@ int main(int argc, char* argv[]) {
 	#pragma once
 
 //Separation of Concerns
+	//Model View Controller
+		//Model and view are independant
+		//coordinated through an interface
 	//seporating aprogram into distinc features
 	//a concern is a piece of interest, or feature
 	//achieved throught modular program design
@@ -174,6 +177,7 @@ int main(int argc, char* argv[]) {
 	//places restrictions on permissable intermixing of data
 
 //polymorhpism
+	//many forms, public inheritance subclassing
 	//adHoc
 		//coercion: integers can be used where floats are expected
 		//Overloading: + applies to both integers and floats
@@ -397,6 +401,7 @@ int main(int argc, char* argv[]) {
 	//how do we represent the data and information
 
 //Constructor method
+	//initailaises member variables
 point::point() //method called the same as the class
 {
 	//initailise values
